@@ -1,4 +1,6 @@
-from app import db
-from app.users.models import User, Role
+from app import db, create_app
 
-db.create_all()
+app = create_app()
+
+with app.app_context():
+    db.create_all()

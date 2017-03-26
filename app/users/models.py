@@ -1,5 +1,6 @@
-from app.database import db
+from app import db
 import bcrypt
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -26,6 +27,7 @@ class User(db.Model):
 
     def __eq__(self, other: 'User') -> bool:
         return (other.mail == self.mail) and (self.password == other.password)
+
 
 class Role(db.Model):
     __tablename__ = 'roles'
