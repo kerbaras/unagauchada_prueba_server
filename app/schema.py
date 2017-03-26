@@ -14,22 +14,3 @@ class Mutation(UsersMutations, graphene.ObjectType):
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
-
-
-default_query = '''
-{
-  allUsers {
-    edges {
-      node {
-        id,
-        name,
-        lastname,
-        mail
-        role {
-          id,
-          name
-        }
-      }
-    }
-  }
-}'''.strip()
